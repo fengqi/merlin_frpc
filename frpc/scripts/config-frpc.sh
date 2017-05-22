@@ -24,6 +24,8 @@ log_level = ${frpc_common_log_level}
 log_max_days = ${frpc_common_log_max_days}
 user = ${frpc_common_user}
 tcp_mux = ${frpc_common_tcp_mux}
+pool_count = 2
+
 EOF
 
 server_nu=`dbus list frpc_localhost_node | sort -n -t "_" -k 4|cut -d "=" -f 1|cut -d "_" -f 4`
@@ -46,6 +48,7 @@ remote_port = ${array_remote_port}
 custom_domains = ${array_custom_domains}
 use_encryption = ${array_use_encryption}
 use_compression = ${array_use_gzip}
+
 EOF
 # ddns setting
 if [[ "${frpc_common_ddns}" == "1" ]] && [[ "${array_local_ip}" == "${lan_ip}" || "${array_local_ip}" == "127.0.0.1" ]] && [[ "${array_local_port}" == "80" ]]; then

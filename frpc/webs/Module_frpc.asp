@@ -505,7 +505,7 @@ function version_show(){
                                         <tr>
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(20)">启用 tcp 多路复用</a></th>
                                             <td>
-                                                <select id="frpc_tcp_mux" name="frpc_tcp_mux" style="width:60px;margin:3px 2px 0px 2px;" class="input_option">
+                                                <select id="frpc_common_tcp_mux" name="frpc_common_tcp_mux" style="width:60px;margin:3px 2px 0px 2px;" class="input_option">
                                                     <option value="true" selected="selected">开</option>
                                                     <option value="false">关</option>
                                                 </select>
