@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="images/favicon.png"/>
 <link rel="icon" href="images/favicon.png"/>
 <title>软件中心 - frp</title>
-<link rel="stylesheet" type="text/css" href="index_style.css"/> 
+<link rel="stylesheet" type="text/css" href="index_style.css"/>
 <link rel="stylesheet" type="text/css" href="form_style.css"/>
 <link rel="stylesheet" type="text/css" href="css/element.css">
 <style>
@@ -17,11 +17,11 @@
     border:1px outset #999;
     background-color:#576D73;
     position:absolute;
-    *margin-top:26px;    
+    *margin-top:26px;
     margin-left:2px;
     *margin-left:-353px;
     width:346px;
-    text-align:left;    
+    text-align:left;
     height:auto;
     overflow-y:auto;
     z-index:200;
@@ -43,13 +43,13 @@
     color:#FFF;
     font-size:12px;
     font-family:Arial, Helvetica, sans-serif;
-    text-decoration:none;    
+    text-decoration:none;
 }
 #ClientList_Block_PC div:hover{
     background-color:#3366FF;
     color:#FFFFFF;
     cursor:default;
-}    
+}
 </style>
 <link rel="stylesheet" type="text/css" href="usp_style.css"/>
 <script type="text/javascript" src="/state.js"></script>
@@ -90,7 +90,7 @@ function buildswitch(){ //生成开关的功能，checked为开启，此时传�
     function(){
         if(document.getElementById('switch').checked){
             document.form.frpc_enable.value = 1;
-            
+
         }else{
             document.form.frpc_enable.value = 0;
         }
@@ -109,9 +109,9 @@ function validForm(){
 
 function onSubmitCtrl(o, s) { //提交操作，提交时运行config-frpc.sh，显示5秒的载入画面
     var _form = document.form;
-    if(trim(_form.frpc_common_server_addr.value)=="" || trim(_form.frpc_common_server_port.value)=="" || trim(_form.frpc_common_privilege_token.value)=="" || trim(_form.frpc_common_vhost_http_port.value)=="" || trim(_form.frpc_common_vhost_https_port.value)=="" || trim(_form.frpc_common_cron_time.value)==""){   
-        alert("提交的表单不能为空!");           
-        return false;   
+    if(trim(_form.frpc_common_server_addr.value)=="" || trim(_form.frpc_common_server_port.value)=="" || trim(_form.frpc_common_privilege_token.value)=="" || trim(_form.frpc_common_vhost_http_port.value)=="" || trim(_form.frpc_common_vhost_https_port.value)=="" || trim(_form.frpc_common_cron_time.value)==""){
+        alert("提交的表单不能为空!");
+        return false;
     }
     document.form.action_mode.value = s;
     document.form.SystemCmd.value = "config-frpc.sh";
@@ -128,9 +128,9 @@ function reload_Soft_Center(){ //返回软件中心按钮
 
 function addTr(o) { //添加配置行操作
     var _form_addTr = document.form;
-    if(trim(_form_addTr.subname_node.value)=="" || trim(_form_addTr.subdomain_node.value)=="" || trim(_form_addTr.localhost_node.value)=="" || trim(_form_addTr.localport_node.value)=="" || trim(_form_addTr.remoteport_node.value)==""){   
-        alert("提交的表单不能为空!");           
-        return false;   
+    if(trim(_form_addTr.subname_node.value)=="" || trim(_form_addTr.subdomain_node.value)=="" || trim(_form_addTr.localhost_node.value)=="" || trim(_form_addTr.localport_node.value)=="" || trim(_form_addTr.remoteport_node.value)==""){
+        alert("提交的表单不能为空!");
+        return false;
     }
     var ns = {};
     var p = "frpc";
@@ -318,7 +318,7 @@ function version_show(){
         url: 'https://koolshare.ngrok.wang/frpc/config.json.js',
         type: 'GET',
         dataType: 'jsonp',
-        success: function(res) {        
+        success: function(res) {
             if(typeof(res["version"]) != "undefined" && res["version"].length > 0) {
                 if(res["version"] == db_frpc["frpc_version"]){
                     $j("#frpc_version_show").html("<i>插件版本：" + res["version"]);
@@ -336,7 +336,7 @@ function version_show(){
 <div id="TopBanner"></div>
 <div id="Loading" class="popup_bg"></div>
 <iframe name="hidden_frame" id="hidden_frame" src="" width="0" height="0" frameborder="0"></iframe>
-<form method="POST" name="form" action="/applydb.cgi?p=frpc" target="hidden_frame"> 
+<form method="POST" name="form" action="/applydb.cgi?p=frpc" target="hidden_frame">
 <input type="hidden" name="current_page" value="Module_webshell.asp"/>
 <input type="hidden" name="next_page" value="Main_webshell.asp"/>
 <input type="hidden" name="group_id" value=""/>
@@ -356,13 +356,13 @@ function version_show(){
         <td valign="top" width="202">
             <div id="mainMenu"></div>
             <div id="subMenu"></div>
-        </td>    
+        </td>
         <td valign="top">
-            <div id="tabMenu" class="submenuBlock"></div>        
+            <div id="tabMenu" class="submenuBlock"></div>
             <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td align="left" valign="top">                
-                        <table width="760px" border="0" cellpadding="5" cellspacing="0" bordercolor="#6b8fa3"  class="FormTitle" id="FormTitle">        
+                    <td align="left" valign="top">
+                        <table width="760px" border="0" cellpadding="5" cellspacing="0" bordercolor="#6b8fa3"  class="FormTitle" id="FormTitle">
                             <tr>
                                 <td bgcolor="#4D595D" colspan="3" valign="top">
                                     <div>&nbsp;</div>
@@ -406,7 +406,7 @@ function version_show(){
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(1)">服务器</a></th>
                                             <td>
                                                 <input type="text" class="input_ss_table" value="" id="frpc_common_server_addr" name="frpc_common_server_addr" maxlength="20" value="" placeholder=""/>
-                                            </td>                                        
+                                            </td>
                                         </tr>
 
                                         <tr>
@@ -415,21 +415,21 @@ function version_show(){
                                         <input type="text" class="input_ss_table" id="frpc_common_server_port" name="frpc_common_server_port" maxlength="10" value="" />
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(3)">Privilege Token</a></th>
                                             <td>
                                                 <input type="password" name="frpc_common_privilege_token" id="frpc_common_privilege_token" class="input_ss_table" autocomplete="new-password" autocorrect="off" autocapitalize="off" maxlength="256" value="" onBlur="switchType(this, false);" onFocus="switchType(this, true);"/>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(4)">HTTP穿透服务端口</a></th>
                                             <td>
                                                 <input type="text" class="input_ss_table" id="frpc_common_vhost_http_port" name="frpc_common_vhost_http_port" maxlength="6" value="" />
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(5)">HTTPS穿透服务端口</a></th>
                                             <td>
@@ -494,6 +494,23 @@ function version_show(){
                                                 </select> 重新注册一次服务
                                             </td>
                                         </tr>
+
+                                        <tr>
+                                            <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(19)">客户端名称</a></th>
+                                            <td>
+                                                <input type="text" class="input_ss_table" id="frpc_common_user" name="frpc_common_user" maxlength="20" value="" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th width="20%"><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(20)">启用 tcp 多路复用</a></th>
+                                            <td>
+                                                <select id="frpc_tcp_mux" name="frpc_tcp_mux" style="width:60px;margin:3px 2px 0px 2px;" class="input_option">
+                                                    <option value="true" selected="selected">开</option>
+                                                    <option value="false">关</option>
+                                                </select>
+                                            </td>
+                                        </tr>
                                     </table>
 
                                 <table id="conf_table" width="100%" border="1" align="center" cellpadding="4" cellspacing="0" class="FormTable_table" style="margin-top:8px;">
@@ -502,7 +519,7 @@ function version_show(){
                                                 <td colspan="10">穿透服务配置</td>
                                               </tr>
                                           </thead>
-                        
+
                                           <tr>
                                             <th><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(9)">协议类型</a></th>
                                           <th><a class="hintstyle" href="javascript:void(0);" onclick="openssHint(10)">服务名称</a></th>
@@ -556,11 +573,11 @@ function version_show(){
                                             </select>
                                         </td>
                                         <td width="7%">
-                                            <div> 
+                                            <div>
                                             </div>
                                         </td>
                                         <td width="10%">
-                                            <div> 
+                                            <div>
                                                 <input type="button" class="add_btn" onclick="addTr()" value=""/>
                                             </div>
                                         </td>
@@ -599,21 +616,22 @@ function version_show(){
 <script type="text/javascript">
 function proto_onchange()
 {
-var remoteport="";
-var obj=document.getElementById('proto_node'); 
-var index=obj.selectedIndex; //序号，取当前选中选项的序号
-var r_https_port="<%  nvram_get(https_lanport); %>"
-var r_ssh_port="<%  nvram_get(sshd_port); %>"
-var r_computer_name="<%  nvram_get(computer_name); %>"
-var r_lan_ipaddr="<% nvram_get(lan_ipaddr); %>"
-var r_subname_node_http= r_computer_name + '-http';
-var r_subname_node_https= r_computer_name + '-https';
-var r_subname_node_ssh= r_computer_name + '-ssh';
-//alert(r_https_port);
-vhost_http_port=document.getElementById("frpc_common_vhost_http_port").value;
-vhost_https_port=document.getElementById("frpc_common_vhost_https_port").value;
-remoteport=obj.options[index].text;
-if (remoteport == "http") {
+    var remoteport="";
+    var obj=document.getElementById('proto_node');
+    var index=obj.selectedIndex; //序号，取当前选中选项的序号
+    var r_https_port="<%  nvram_get(https_lanport); %>"
+    var r_ssh_port="<%  nvram_get(sshd_port); %>"
+    var r_computer_name="<%  nvram_get(computer_name); %>"
+    var r_lan_ipaddr="<% nvram_get(lan_ipaddr); %>"
+    var r_subname_node_http= r_computer_name + '-http';
+    var r_subname_node_https= r_computer_name + '-https';
+    var r_subname_node_ssh= r_computer_name + '-ssh';
+
+    vhost_http_port=document.getElementById("frpc_common_vhost_http_port").value;
+    vhost_https_port=document.getElementById("frpc_common_vhost_https_port").value;
+    remoteport=obj.options[index].text;
+
+    if (remoteport == "http") {
         document.getElementById('remoteport_node').disabled=true;
         document.getElementById('remoteport_node').value=vhost_http_port;
     } else if(remoteport == "https"){
